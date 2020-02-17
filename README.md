@@ -34,7 +34,7 @@ const {SimpleDateFormat} = require('@riversun/simple-date-format');
 ### use with **\<script\>tag**  from CDN 
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@riversun/simple-date-format@1.0.1/dist/simple-date-format.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@riversun/simple-date-format@1.0.2/dist/simple-date-format.js"></script>
 ```
 
 # usage
@@ -191,11 +191,11 @@ The given date and time are 2018-07-17 12:08:56 local time in Tokyo/Japan time z
   <td>Example</td>
  </tr>
  <tr>
-  <td>yyyyMMdd'T'HHmmssXX</td>
+  <td>yyyyMMdd'T'HHmmssXX<br>(ISO 8601)</td>
   <td>20180717T120856+0900</td>
  </tr>
  <tr>
-  <td>yyyy-MM-dd'T'HH:mm:ssXXX</td>
+  <td>yyyy-MM-dd'T'HH:mm:ssXXX<br>(ISO 8601)</td>
   <td>2018-07-17T12:08:56+09:00</td>
  </tr>
  <tr>

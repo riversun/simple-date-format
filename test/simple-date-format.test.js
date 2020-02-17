@@ -19,6 +19,13 @@ describe('SimpleDateFormat', () => {
             const formatted = sdf.format(testDate);
             expect(formatted).toBe('水');
         });
+        test('formatwith yyyy/MM/dd HH:mm:ss', () => {
+            const sdf = new SimpleDateFormat()
+                .setDays(['日', '月', '火', '水', '木', '金', '土']);
+            const testDate = new Date(DATE1);
+            const formatted = sdf.formatWith('E',testDate);
+            expect(formatted).toBe('水');
+        });
     });
 
     describe('setMonths()', () => {
@@ -27,6 +34,13 @@ describe('SimpleDateFormat', () => {
                 .setMonths(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']);
             const testDate = new Date(DATE1);
             const formatted = sdf.format(testDate);
+            expect(formatted).toBe('2020/April/01 01:02:03');
+        });
+        test('formatwith yyyy/MMM/dd HH:mm:ss', () => {
+            const sdf = new SimpleDateFormat()
+                .setMonths(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']);
+            const testDate = new Date(DATE1);
+            const formatted = sdf.formatWith('yyyy/MMM/dd HH:mm:ss',testDate);
             expect(formatted).toBe('2020/April/01 01:02:03');
         });
     });

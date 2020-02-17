@@ -98,7 +98,10 @@ export default class SimpleDateFormat {
      * @param date
      */
     formatWith(formatStr, date) {
-        return formatWith(formatStr, date, this.days);
+        return formatWith(formatStr, date, {
+            days: this.days,
+            months: this.months
+        });
     }
 
 }
