@@ -7,6 +7,8 @@ You can easily format date with specific patterns like as follows.
 
 `yyyyMMdd'T'HHmmssXX` → `20180717T120856+0900`
 
+**[live demo is here](https://riversun.github.io/simple-date-format)**
+
 # install 
 
 ### use node.js/npm
