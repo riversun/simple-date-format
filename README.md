@@ -13,13 +13,23 @@ You can easily format date with specific patterns like as follows.
 
 install module
 ```
-npm install simple-date-format
+npm install @riversun/simple-date-format
 ```   
 
-import module into source code
+**import**  module 
 ```javascript 1.8
-import {SimpleDateFormat} from 'simple-date-format'
+import {SimpleDateFormat} from "@riversun/simple-date-format";
+
 ```
+
+or 
+
+**require** module 
+
+```javascript 1.8
+const {SimpleDateFormat} = require('@riversun/simple-date-format');
+
+``` 
 
 ### use with **\<script\>tag**  from CDN 
 
