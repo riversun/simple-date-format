@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>@riversun/simple-date-format demo</title>
+</head>
+<body>
+<h3>@riversun/simple-date-format demo</h3>
+<script src="simple-date-format.js"></script>
+<script>
+
+    const dateStr = '2018/07/17 12:08:56';
+
+    const date = new Date(dateStr);
+
+    const formats = [
+        "yyyyMMdd'T'HHmmssXX",//ISO8601
+        "yyyy-MM-dd'T'HH:mm:ssXXX",//ISO8601EX
+        "E, dd MMM yyyy HH:mm:ss Z",//RFC1123(RFC822) like email
+        "yyyy.MM.dd 'at' hh:mm:ss Z",//hh shows 1-12
+        "EEE, MMM d, ''yy",
+        "h:mm a",
+        "hh 'o''''clock' a, X",
+        "yyyy年M月d日 H時m分s秒",
+        "yyyy年MM月dd日 HH時mm分ss秒",
+        "yyyyMMddHHmmssSSS"
+
+    ];
+
+    const sdf = new SimpleDateFormat();
+
+    document.write(`${date}<br>`)
+    for (let format of formats) {
+        document.write(`${format} \t=> ${sdf.formatWith(format, date)}<br>`);
+    }
+
+</script>
+</body>
+</html>

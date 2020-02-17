@@ -1,0 +1,38 @@
+{
+  "name": "@riversun/simple-date-format",
+  "version": "1.0.0",
+  "description": "Simple Date Formater for JavaScript.It allows for formatting (date -> text) like with \"yyyyMMdd HHmmss SSS\" , \"yyyyMd Hms\"",
+  "main": "dist/simple-date-format.js",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.config.js",
+    "release": "webpack --config webpack.config.js --mode production",
+    "test": "jest -i",
+    "test:coverage": "npm run test -- --coverage"
+  },
+  "author": "Tom Misawa <riversun.org@gmail.com> (https://github.com/riversun)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riversun/simple-date-format.git"
+  },
+  "bugs": {
+    "url": "https://github.com/riversun/simple-date-format/issues"
+  },
+  "homepage": "https://github.com/riversun/simple-date-format#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-jest": "^25.1.0",
+    "babel-loader": "^8.0.6",
+    "cross-env": "^7.0.0",
+    "jest": "^25.1.0",
+    "terser-webpack-plugin": "^1.4.3",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {},
+  "directories": {
+    "test": "test"
+  }
+}
