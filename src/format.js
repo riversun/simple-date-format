@@ -39,12 +39,12 @@ export function formatWith(formatStr, date, opts) {
         return chunk.join('');
     };
 
-    const ESCAPE_DELIM = '\0';
+    const DELIM = '\0\0';
     const escapeStack = [];
 
     const escapedFmtStr = formatStr.replace(/'.*?'/g, m => {
         escapeStack.push(m.replace(/'/g, ''));
-        return ESCAPE_DELIM + (escapeStack.length - 1) + ESCAPE_DELIM;
+        return `${DELIM}${escapeStack.length - 1}${DELIM}`;
     });
 
     const formattedStr = escapedFmtStr
@@ -64,13 +64,13 @@ export function formatWith(formatStr, date, opts) {
         .replace(/S{3}/g, m => pad(date.getMilliseconds(), m))
         .replace(/[E]+/g, m => _days[date.getDay()])
         .replace(/[Z]+/g, m => timezone(date, m))
-        .replace(/X{1,3}/g, m => timezone(date, m))
-    ;
+        .replace(/X{1,3}/g, m => timezone(date, m));
 
-    const unescapedStr = formattedStr.replace(/\0\d+\0/g, m => {
-        const unescaped = escapeStack.shift();
-        return unescaped.length > 0 ? unescaped : '\'';
-    });
+    const unescapedStr = formattedStr.replace(new RegExp(`${DELIM}\\d+${DELIM}`, 'g'),
+        m => {
+            const unescaped = escapeStack.shift();
+            return unescaped.length > 0 ? unescaped : '\'';
+        });
 
     return unescapedStr;
 }
