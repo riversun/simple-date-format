@@ -19,7 +19,7 @@ export function formatWith(formatStr, date, opts) {
     }
 
     const pad = (number, strDigits, isUnpad) => {
-        const strNum = number.toString();
+        const strNum = Math.abs(number).toString();
         if (!isUnpad && strNum.length > strDigits.length) {
             return strNum;
         } else {
