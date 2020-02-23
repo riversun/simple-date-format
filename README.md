@@ -14,13 +14,15 @@ You can easily format date with specific patterns like as follows.
 ### use node.js/npm
 
 install module
+
 ```
 npm install @riversun/simple-date-format
 ```   
 
-**import**  module 
-```javascript 1.8
-import {SimpleDateFormat} from "@riversun/simple-date-format";
+**import**  module
+ 
+```javascript
+import SimpleDateFormat from "@riversun/simple-date-format";
 
 ```
 
@@ -29,7 +31,7 @@ or
 **require** module 
 
 ```javascript 1.8
-const {SimpleDateFormat} = require('@riversun/simple-date-format');
+const SimpleDateFormat = require('@riversun/simple-date-format');
 
 ``` 
 

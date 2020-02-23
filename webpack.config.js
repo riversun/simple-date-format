@@ -18,16 +18,24 @@ module.exports = (env, argv) => {
             disableHostCheck: true,
         },
         entry: {
-            'simple-date-format': ['./src/index.js'],
+            'simple-date-format': ['./src/simple-date-format.js'],
 
         },
         output: {
             path: path.join(__dirname, 'dist'),
             publicPath: '/',
             filename: argv.mode === 'production' ? `[name].js` : `[name].js`,  //`[name].min.js`
-            library: '',
+            library: 'SimpleDateFormat',
+            libraryExport: 'default',
             libraryTarget: 'umd',
-            globalObject  : 'this'//for both browser and node.js
+            globalObject  : 'this',//for both browser and node.js
+            umdNamedDefine: true,
+            auxiliaryComment: {
+                root: 'for Root',
+                commonjs: 'for CommonJS environment',
+                commonjs2: 'for CommonJS2 environment',
+                amd: 'for AMD environment'
+            }
         },
 
         optimization: {

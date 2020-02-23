@@ -1,10 +1,11 @@
 {
   "name": "@riversun/simple-date-format",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Simple Date Formater for JavaScript.It allows for formatting (date -> text) like with \"yyyyMMdd HHmmss SSS\" , \"yyyyMd Hms\"",
   "main": "dist/simple-date-format.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js",
+    "build": "webpack --config webpack.config.js",
     "release": "webpack --config webpack.config.js --mode production",
     "test": "jest -i",
     "test:coverage": "npm run test -- --coverage"
