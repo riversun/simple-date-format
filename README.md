@@ -151,7 +151,7 @@ The given date and time are 2018-07-17 12:08:56 local time in Tokyo/Japan time z
   <td>56</td>
  </tr>
  <tr>
-  <td>S</td>
+  <td>SSS</td>
   <td>Millisecond</td>
   <td>789</td>
  </tr>
