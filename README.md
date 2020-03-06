@@ -1,5 +1,7 @@
 # simple-date-format
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/469533898ebe429690ad4c508634fad7)](https://app.codacy.com/manual/riversun/simple-date-format?utm_source=github.com&utm_medium=referral&utm_content=riversun/simple-date-format&utm_campaign=Badge_Grade_Dashboard)
+
 Simple Date Formater for JavaScript.
 It allows for formatting date → text .
 
