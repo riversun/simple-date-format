@@ -3,3 +3,16 @@ test
 gulpfile.js
 node_modules
 .DS_Store
+src_server
+src
+public
+test
+gulpfile.js
+node_modules
+.DS_Store
+*.iml
+*.ipr
+*.iws
+.idea/
+target
+build

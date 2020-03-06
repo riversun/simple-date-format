@@ -3,15 +3,15 @@
 .project
 .settings
 
+# for build
+target
+build
+
 # for IDEA
 *.iml
 *.ipr
 *.iws
 .idea/
-
-# for build
-target
-build
 
 # for  mac
 .DS_Store

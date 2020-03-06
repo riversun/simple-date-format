@@ -22,7 +22,7 @@ module.exports = (env, argv) => {
 
         },
         output: {
-            path: path.join(__dirname, 'dist'),
+            path: path.join(__dirname, 'lib'),
             publicPath: '/',
             filename: argv.mode === 'production' ? `[name].js` : `[name].js`,  //`[name].min.js`
             library: 'SimpleDateFormat',
