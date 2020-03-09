@@ -42,7 +42,7 @@ const SimpleDateFormat = require('@riversun/simple-date-format');
 ### use with **\<script\>tag**  from CDN 
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@riversun/simple-date-format@1.1.2/dist/simple-date-format.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@riversun/simple-date-format@1.1.2/lib/simple-date-format.js"></script>
 ```
 
 # usage
