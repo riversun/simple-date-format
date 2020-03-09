@@ -1,6 +1,6 @@
 # simple-date-format
 [![npm version](https://badge.fury.io/js/%40riversun%2Fsimple-date-format.svg)](https://badge.fury.io/js/%40riversun%2Fsimple-date-format)
-[![CircleCI](https://circleci.com/gh/riversun/simple-date-format/tree/master.svg?style=svg)](https://circleci.com/gh/riversun/simple-date-format/tree/master)
+[![CircleCI](https://circleci.com/gh/riversun/simple-date-format/tree/master.svg?style=shield)](https://circleci.com/gh/riversun/simple-date-format/tree/master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/469533898ebe429690ad4c508634fad7)](https://app.codacy.com/manual/riversun/simple-date-format?utm_source=github.com&utm_medium=referral&utm_content=riversun/simple-date-format&utm_campaign=Badge_Grade_Dashboard)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
