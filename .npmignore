@@ -6,10 +6,6 @@ node_modules
 src_server
 src
 public
-test
-gulpfile.js
-node_modules
-.DS_Store
 *.iml
 *.ipr
 *.iws
