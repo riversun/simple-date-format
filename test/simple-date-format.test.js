@@ -289,6 +289,7 @@ describe('SimpleDateFormat', () => {
 
   describe('formatWith()', () => {
 
+
     test('normal yyyy/MM/dd HH:mm:ss', () => {
       const testDate = new Date(DATE1);
       const sdf = new SimpleDateFormat();
@@ -321,7 +322,31 @@ describe('SimpleDateFormat', () => {
       const formatted = sdf.formatWith('yyyy/MM/dd(E) HH:mm:ss yyyy/MM/dd(E) HH:mm:ss', testDate);
       expect(formatted).toBe('2020/12/31(Thu) 10:11:00 2020/12/31(Thu) 10:11:00');
     });
+    test('Omit date', () => {
+      const now = new Date();
+      const sdf = new SimpleDateFormat();
+      const formatted = sdf.formatWith('yyyy/MM/dd HH:mm:ss');
+      const formattedNow = sdf.formatWith('yyyy/MM/dd HH:mm:ss', now);
+      expect(formatted).toBe(formattedNow);
+    });
+    test('Omit opt', () => {
+      const testDate = new Date(DATE1);
+      const sdf = new SimpleDateFormat();
+      const formatted = sdf.formatWith('yyyy/MM/dd HH:mm:ss', testDate, null);
+      expect(formatted).toBe('2020/04/01 01:02:03');
+    });
+    test('Check millisec', () => {
+      const testDate = new Date(DATE1);
+      const sdf = new SimpleDateFormat();
+      const formatted = sdf.formatWith('yyyy/MM/dd HH:mm:ss SSS', testDate, null);
+      expect(formatted).toBe('2020/04/01 01:02:03 000');
 
+      // S or SS will be ignored
+      const formatted1 = sdf.formatWith('yyyy/MM/dd HH:mm:ss S', testDate, null);
+      expect(formatted1).toBe('2020/04/01 01:02:03 S');
 
+      const formatted2 = sdf.formatWith('yyyy/MM/dd HH:mm:ss SS', testDate, null);
+      expect(formatted2).toBe('2020/04/01 01:02:03 SS');
+    });
   });
 });
