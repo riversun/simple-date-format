@@ -1,4 +1,5 @@
 import SimpleDateFormat from '../src/simple-date-format';
+import SafeReplacer from "../src/safe-replacer";
 
 const DATE0 = new Date('2019/04/01 01:02:03');
 const DATE1 = new Date('2020/04/01 01:02:03');
@@ -39,6 +40,28 @@ describe('SimpleDateFormat', () => {
       const formatted = sdf.formatWith('E', testDate);
       expect(formatted).toBe('水');
     });
+    test('check error when days are nothing.', () => {
+
+      expect(function() {
+        const sdf = new SimpleDateFormat()
+          .setDays();
+      }).toThrowError('days not specified');
+    });
+    test('check error when days is not array', () => {
+
+      expect(function() {
+        const sdf = new SimpleDateFormat('E')
+          .setDays({ day: '日' });
+      }).toThrowError('days must be an array.');
+    });
+
+    test('check error when size of days is not enough', () => {
+
+      expect(function() {
+        const sdf = new SimpleDateFormat()
+          .setDays(['日', '月', '火', '水', '木', '金']);
+      }).toThrowError('days array size must be 7');
+    });
   });
 
   describe('setMonths()', () => {
@@ -55,6 +78,26 @@ describe('SimpleDateFormat', () => {
       const testDate = new Date(DATE1);
       const formatted = sdf.formatWith('yyyy/MMM/dd HH:mm:ss', testDate);
       expect(formatted).toBe('2020/April/01 01:02:03');
+    });
+
+    test('check error when months are nothing.', () => {
+      expect(function() {
+        const sdf = new SimpleDateFormat()
+          .setMonths();
+      }).toThrowError('months not specified');
+    });
+    test('check error when months is not array', () => {
+      expect(function() {
+        const sdf = new SimpleDateFormat('E')
+          .setMonths({ month: 'January' });
+      }).toThrowError('months must be an array');
+    });
+
+    test('check error when size of months is not enough', () => {
+      expect(function() {
+        const sdf = new SimpleDateFormat()
+          .setMonths(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November']);
+      }).toThrowError('months array size must be 12');
     });
   });
   describe('format()', () => {

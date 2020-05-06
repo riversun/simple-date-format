@@ -54,7 +54,6 @@ export function formatWith(formatStr, date, opts) {
     .replace(/y{4}|y{2}/g, m => pad(date.getFullYear(), m, true))
     .replace(/M{3}/g, m => _months[date.getMonth()])
     .replace(/M{1,2}/g, m => pad(date.getMonth() + 1, m))
-    .replace(/M{1,2}/g, m => pad(date.getMonth() + 1, m))
     .replace(/d{1,2}/g, m => pad(date.getDate(), m))
     .replace(/H{1,2}/g, m => pad(date.getHours(), m))
     .replace(/h{1,2}/g, m => {

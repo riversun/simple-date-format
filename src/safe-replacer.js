@@ -24,9 +24,9 @@ export default class SafeReplacer {
     this.opt = opt ? opt : {};
     this.str = str;
     this.escapeStack = [];
-    this.DELIM_ESCAPER_PREFIX = '<<<';
-    this.DELIM_ESCAPER_SUFFIX = '>>>';
-    this.DELIM_CONSUMED = '###';
+    this.DELIM_ESCAPER_PREFIX = '<#<#<#';
+    this.DELIM_ESCAPER_SUFFIX = '#>#>#>';
+    this.DELIM_CONSUMED = '#-#-#-';
 
     if (this.opt.escaperPrefix) {
       this.DELIM_ESCAPER_PREFIX = opt.escaperPrefix;
@@ -36,6 +36,15 @@ export default class SafeReplacer {
     }
     if (this.opt.consumedDelimiter) {
       this.DELIM_CONSUMED = opt.consumedDelimiter;
+    }
+    if (this.str.indexOf(this.DELIM_ESCAPER_PREFIX) >= 0 ||
+      this.str.indexOf(this.DELIM_ESCAPER_SUFFIX) >= 0 ||
+      this.str.indexOf(this.DELIM_CONSUMED) >= 0) {
+
+      throw Error(`Replacement may not be possible 
+      because the target string contains the prefix and suffix strings used in the replacement process.
+Specify three options, escaperPrefix, escaperSuffix, and consumedDelimiter, as a large argument to the constructor.
+`);
     }
 
     this.regSearchConsumed = new RegExp(`${this.DELIM_CONSUMED}.*?${this.DELIM_CONSUMED}`, 'g');
@@ -84,7 +93,7 @@ export default class SafeReplacer {
         } else if (typeof replacer === 'function') {
           return `${this.DELIM_CONSUMED}${replacer(m)}${this.DELIM_CONSUMED}`;
         } else {
-          throw Error(`Invalid replacer.${replacer}`);
+          throw Error(`Invalid replacer. replacer="${replacer}"`);
         }
       }
       return m;
