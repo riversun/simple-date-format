@@ -1,6 +1,6 @@
 {
   "name": "@riversun/simple-date-format",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Simple Date Formater for JavaScript.It allows for formatting (date -> text) like with \"yyyyMMdd HHmmss SSS\" , \"yyyyMd Hms\"",
   "main": "lib/simple-date-format.js",
   "scripts": {
